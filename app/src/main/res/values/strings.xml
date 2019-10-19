@@ -4,7 +4,7 @@
 
 
     <string name="base_url">https://us-central1-stashandroidchallenge.cloudfunctions.net/api/</string>
-    <string name="api_key"><!--insert your key--></string>
+    <string name="api_key">764e736e08f1f1e8b587a62fc61383e2</string>
 
     <string name="search_hint">Search Phrase</string>
     <string name="metadata_title_format">%1$s by %2$s</string>
