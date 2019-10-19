@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StashChallenge</string>
+
+
+    <string name="base_url">https://us-central1-stashandroidchallenge.cloudfunctions.net/api/</string>
+    <string name="api_key"><!--insert your key--></string>
+
+    <string name="search_hint">Search Phrase</string>
+    <string name="metadata_title_format">%1$s by %2$s</string>
+</resources>
