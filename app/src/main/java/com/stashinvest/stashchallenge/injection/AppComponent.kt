@@ -11,10 +11,10 @@ import javax.inject.Singleton
 @Component(modules = [AppModule::class, NetworkModule::class])
 interface AppComponent {
     fun inject(app: App)
-    
+
     fun inject(activity: MainActivity)
-    
+
     fun inject(fragment: MainFragment)
-    
+
     fun inject(fragment: PopUpDialogFragment)
 }
