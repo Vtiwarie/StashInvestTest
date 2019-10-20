@@ -8,4 +8,9 @@
 
     <string name="search_hint">Search Phrase</string>
     <string name="metadata_title_format">%1$s by %2$s</string>
+
+    <!-- MAIN FRAGMENT -->
+    <string name="mf_title">Title:</string>
+    <string name="mf_artist">Artist:</string>
+    <string name="mf_caption">Caption:</string>
 </resources>
