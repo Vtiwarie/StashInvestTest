@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class ImageFactory @Inject constructor() {
     fun createImageViewModel(imageResult: ImageResult,
-                             listener: (id: String, uri: String?) -> Unit): ImageViewModel {
+                             listener: ((id: String, uri: String?) -> Unit)? = null): ImageViewModel {
         return ImageViewModel(imageResult, listener)
     }
 }

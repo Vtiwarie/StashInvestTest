@@ -22,13 +22,11 @@ class StashImageService @Inject constructor(
     fun getImageMetadata(id: String): Flowable<MetadataResponse> {
         return api.getImageMetadata(id)
                 .subscribeOn(RxSchedulers().network)
-                .observeOn(RxSchedulers().main)
     }
 
-    fun getSimilarImages(id: String): Single<ImageResponse> {
+    fun getSimilarImages(id: String): Flowable<ImageResponse> {
         return api.getSimilarImages(id)
                 .subscribeOn(RxSchedulers().network)
-                .observeOn(RxSchedulers().main)
     }
 
     companion object {

@@ -57,10 +57,13 @@ class MainPresenter @Inject constructor(
                 .doOnError {
                     view?.showError(it)
                 }
-                .subscribe { response ->
-                    val metadata = response.metadata.firstOrNull()
+                .flatMap { metadata -> stashImageService.getSimilarImages(id).map { similarImages -> metadata to similarImages } }
+                .subscribe {
+                    val metadata = it.first.metadata.firstOrNull()
+                    val similarImages = ArrayList(it.second.images)
+
                     metadata?.let {
-                        view?.showDialog(metadata, uri)
+                        view?.showDialog(metadata, uri, similarImages)
                     }
                 }
 

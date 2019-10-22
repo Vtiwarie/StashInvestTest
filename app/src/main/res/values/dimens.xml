@@ -8,4 +8,17 @@
     <dimen name="margin_large">24dp</dimen>
     <dimen name="margin_extra_large">32dp</dimen>
 
+    <!-- IMAGES -->
+    <dimen name="image_dimen_width">128dp</dimen>
+    <dimen name="image_dimen_height">128dp</dimen>
+    <dimen name="sub_image_dimen_width">64dp</dimen>
+    <dimen name="sub_image_dimen_height">64dp</dimen>
+
+    <!-- PADDING -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_extra_large">32dp</dimen>
+
+
 </resources>

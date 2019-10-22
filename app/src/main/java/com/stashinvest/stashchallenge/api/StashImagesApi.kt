@@ -18,5 +18,5 @@ interface StashImagesApi {
     fun getImageMetadata(@Path("id") id: String): Flowable<MetadataResponse>
 
     @GET("images/{id}/similar")
-    fun getSimilarImages(@Path("id") id: String): Single<ImageResponse>
+    fun getSimilarImages(@Path("id") id: String): Flowable<ImageResponse>
 }

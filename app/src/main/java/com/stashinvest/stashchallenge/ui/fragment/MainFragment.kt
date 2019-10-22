@@ -11,9 +11,9 @@ import androidx.annotation.Nullable
 import androidx.recyclerview.widget.GridLayoutManager
 import com.stashinvest.stashchallenge.App
 import com.stashinvest.stashchallenge.R
+import com.stashinvest.stashchallenge.api.model.ImageResult
 import com.stashinvest.stashchallenge.api.model.Metadata
 import com.stashinvest.stashchallenge.ui.base.BaseFragment
-import com.stashinvest.stashchallenge.ui.dialogs.MainDialog
 import com.stashinvest.stashchallenge.ui.presenter.MainPresenter
 import com.stashinvest.stashchallenge.ui.views.MainView
 import com.stashinvest.stashchallenge.util.SpaceItemDecoration
@@ -63,12 +63,13 @@ class MainFragment : BaseFragment<MainPresenter, MainView>(), MainView {
         Toast.makeText(activity!!, t.message, Toast.LENGTH_LONG).show()
     }
 
-    override fun showDialog(metadata: Metadata, uri: String?) {
-        MainDialog.newInstance(
+    override fun showDialog(metadata: Metadata, uri: String?, similarImages: ArrayList<ImageResult>) {
+        PopUpDialogFragment.newInstance(
                 metadata.title,
                 metadata.artist,
                 metadata.caption,
-                uri
+                uri,
+                similarImages
         ).show(fragmentManager!!, DIALOG_TAG)
     }
 }
