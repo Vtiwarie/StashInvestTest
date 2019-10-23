@@ -4,6 +4,7 @@ import com.stashinvest.stashchallenge.App
 import com.stashinvest.stashchallenge.ui.activity.MainActivity
 import com.stashinvest.stashchallenge.ui.fragment.MainFragment
 import com.stashinvest.stashchallenge.ui.fragment.PopUpDialogFragment
+import com.stashinvest.stashchallenge.ui.presenter.MainPresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -17,4 +18,7 @@ interface AppComponent {
     fun inject(fragment: MainFragment)
 
     fun inject(fragment: PopUpDialogFragment)
+
+    fun inject(mainPresenter: MainPresenter)
+
 }

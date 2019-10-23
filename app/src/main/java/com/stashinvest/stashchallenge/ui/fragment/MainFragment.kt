@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_main.*
 class MainFragment : BaseFragment<MainPresenter, MainView>(), MainView {
 
     companion object {
-        const val DIALOG_TAG = "MAINFRAGMENT_TAG"
+        const val DIALOG_TAG = "MAIN_FRAGMENT_TAG"
         fun newInstance(): MainFragment {
             return MainFragment()
         }
@@ -43,7 +44,7 @@ class MainFragment : BaseFragment<MainPresenter, MainView>(), MainView {
         super.onViewCreated(view, savedInstanceState)
         searchPhrase.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                presenter.search(v.editableText.toString())
+                presenter.fetchSearch(v.editableText.toString())
                 return@setOnEditorActionListener true
             }
             false
@@ -55,7 +56,7 @@ class MainFragment : BaseFragment<MainPresenter, MainView>(), MainView {
     }
 
     override fun showProgess(visible: Boolean) {
-        progressBar.visibility = if (visible) View.VISIBLE else View.GONE
+        progressBar.visibility = if (visible) VISIBLE else GONE
     }
 
     override fun showError(t: Throwable) {

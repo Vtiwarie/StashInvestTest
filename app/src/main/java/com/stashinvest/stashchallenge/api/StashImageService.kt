@@ -15,18 +15,14 @@ class StashImageService @Inject constructor(
 
     fun searchImages(phrase: String): Single<ImageResponse> {
         return api.searchImages(phrase, FIELDS, SORT_ORDER)
-                .subscribeOn(RxSchedulers().network)
-                .observeOn(RxSchedulers().main)
     }
 
     fun getImageMetadata(id: String): Flowable<MetadataResponse> {
         return api.getImageMetadata(id)
-                .subscribeOn(RxSchedulers().network)
     }
 
     fun getSimilarImages(id: String): Flowable<ImageResponse> {
         return api.getSimilarImages(id)
-                .subscribeOn(RxSchedulers().network)
     }
 
     companion object {
